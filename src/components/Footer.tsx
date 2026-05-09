@@ -36,9 +36,9 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
-              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /> 221B Baker St, London</li>
-              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /> +1 (555) 123-4567</li>
-              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /> hello@wanderly.com</li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /><span>221B Baker St, London</span></li>
+              <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /><span>+1 (555) 123-4567</span></li>
+              <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /><span>hello@wanderly.com</span></li>
             </ul>
           </div>
 
