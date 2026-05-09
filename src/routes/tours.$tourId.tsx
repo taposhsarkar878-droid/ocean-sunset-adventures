@@ -2,7 +2,7 @@ import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, MapPin, Clock, Calendar, Star, Check, X } from "lucide-react";
 import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
-import { getTourById } from "@/lib/tours";
+import { getTourById, type Tour } from "@/lib/tours";
 
 export const Route = createFileRoute("/tours/$tourId")({
   component: TourDetailPage,
@@ -38,7 +38,7 @@ export const Route = createFileRoute("/tours/$tourId")({
 });
 
 function TourDetailPage() {
-  const { tour } = Route.useLoaderData();
+  const { tour } = Route.useLoaderData() as { tour: Tour };
 
   return (
     <main className="min-h-screen bg-background">
