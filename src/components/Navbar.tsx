@@ -17,7 +17,7 @@ export function Navbar() {
           <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground">
             <Plane className="h-5 w-5" />
           </div>
-          <span className="text-xl font-bold tracking-tight">Wanderly</span>
+          <span className="text-xl font-bold tracking-tight">Worldwide Travel</span>
         </Link>
 
         <ul className="hidden items-center gap-8 md:flex">
