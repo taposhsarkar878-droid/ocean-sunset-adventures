@@ -1,7 +1,26 @@
 import heroImg from "@/assets/hero-travel.jpg";
 import { MapPin, Calendar, Wallet, Search } from "lucide-react";
+import { useState } from "react";
+import { useNavigate } from "@tanstack/react-router";
 
 export function Hero() {
+  const navigate = useNavigate();
+  const [destination, setDestination] = useState("");
+  const [date, setDate] = useState("");
+  const [budget, setBudget] = useState("");
+
+  const onSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    navigate({
+      to: "/search",
+      search: {
+        destination: destination.trim(),
+        date,
+        budget: Number(budget) || 0,
+      },
+    });
+  };
+
   return (
     <section className="relative min-h-[760px] w-full overflow-hidden">
       <img
@@ -27,32 +46,58 @@ export function Hero() {
 
       {/* Floating search bar */}
       <div className="absolute bottom-0 left-1/2 z-10 w-full max-w-5xl -translate-x-1/2 translate-y-1/2 px-6">
-        <div className="rounded-2xl bg-card p-3 shadow-2xl ring-1 ring-border md:p-4">
+        <form onSubmit={onSubmit} className="rounded-2xl bg-card p-3 shadow-2xl ring-1 ring-border md:p-4">
           <div className="grid grid-cols-1 gap-3 md:grid-cols-[1fr_1fr_1fr_auto]">
-            <SearchField icon={<MapPin className="h-5 w-5 text-primary" />} label="Destination" placeholder="Where to?" />
-            <SearchField icon={<Calendar className="h-5 w-5 text-primary" />} label="Travel Date" placeholder="Add dates" />
-            <SearchField icon={<Wallet className="h-5 w-5 text-primary" />} label="Budget" placeholder="Any budget" />
-            <button className="flex items-center justify-center gap-2 rounded-xl bg-accent px-8 py-4 font-semibold text-accent-foreground shadow-lg shadow-accent/30 transition hover:scale-[1.02]">
+            <Field icon={<MapPin className="h-5 w-5 text-primary" />} label="Destination">
+              <input
+                value={destination}
+                onChange={(e) => setDestination(e.target.value)}
+                placeholder="Where to?"
+                className="bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+              />
+            </Field>
+            <Field icon={<Calendar className="h-5 w-5 text-primary" />} label="Travel Date">
+              <input
+                type="date"
+                value={date}
+                onChange={(e) => setDate(e.target.value)}
+                className="bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+              />
+            </Field>
+            <Field icon={<Wallet className="h-5 w-5 text-primary" />} label="Max Budget (USD)">
+              <input
+                type="number"
+                min={0}
+                value={budget}
+                onChange={(e) => setBudget(e.target.value)}
+                placeholder="Any budget"
+                className="bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground"
+              />
+            </Field>
+            <button
+              type="submit"
+              className="flex items-center justify-center gap-2 rounded-xl bg-accent px-8 py-4 font-semibold text-accent-foreground shadow-lg shadow-accent/30 transition hover:scale-[1.02]"
+            >
               <Search className="h-5 w-5" />
               Search
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </section>
   );
 }
 
-function SearchField({ icon, label, placeholder }: { icon: React.ReactNode; label: string; placeholder: string }) {
+function Field({ icon, label, children }: { icon: React.ReactNode; label: string; children: React.ReactNode }) {
   return (
-    <div className="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-secondary">
+    <label className="flex items-center gap-3 rounded-xl px-4 py-3 transition hover:bg-secondary">
       <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg bg-secondary">
         {icon}
       </div>
       <div className="flex flex-col text-left">
         <span className="text-xs font-semibold uppercase tracking-wide text-muted-foreground">{label}</span>
-        <input className="bg-transparent text-sm font-medium text-foreground outline-none placeholder:text-muted-foreground" placeholder={placeholder} />
+        {children}
       </div>
-    </div>
+    </label>
   );
 }
