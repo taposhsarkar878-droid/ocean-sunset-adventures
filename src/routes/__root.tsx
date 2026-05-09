@@ -72,14 +72,18 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
+      { title: "Old Santa" },
+      { name: "description", content: "Wanderlust Hub is a travel agency website homepage designed to showcase tours and travel packages." },
       { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { property: "og:title", content: "Old Santa" },
+      { property: "og:description", content: "Wanderlust Hub is a travel agency website homepage designed to showcase tours and travel packages." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "twitter:site", content: "@Lovable" },
+      { name: "twitter:title", content: "Old Santa" },
+      { name: "twitter:description", content: "Wanderlust Hub is a travel agency website homepage designed to showcase tours and travel packages." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/77a0f576-c4a9-4079-a2f2-a85f53aff1b0/id-preview-bed27659--f1846759-48ad-458b-9bf6-0b6090d800c7.lovable.app-1778347459714.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/77a0f576-c4a9-4079-a2f2-a85f53aff1b0/id-preview-bed27659--f1846759-48ad-458b-9bf6-0b6090d800c7.lovable.app-1778347459714.png" },
     ],
     links: [
       {
