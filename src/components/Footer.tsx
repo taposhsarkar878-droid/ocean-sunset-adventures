@@ -10,7 +10,7 @@ export function Footer() {
               <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent text-accent-foreground">
                 <Plane className="h-5 w-5" />
               </div>
-              <span className="text-xl font-bold">Wanderly</span>
+              <span className="text-xl font-bold">Worldwide Travel</span>
             </div>
             <p className="mt-4 text-sm text-primary-foreground/80">
               Crafting unforgettable journeys since 2010. Your adventure starts here.
@@ -36,7 +36,7 @@ export function Footer() {
           <div>
             <h4 className="mb-4 text-sm font-bold uppercase tracking-wider">Contact</h4>
             <ul className="space-y-3 text-sm text-primary-foreground/80">
-              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /><span>221B Baker St, London</span></li>
+              <li className="flex items-center gap-2"><MapPin className="h-4 w-4 text-accent" /><span>221B United States,Oregon</span></li>
               <li className="flex items-center gap-2"><Phone className="h-4 w-4 text-accent" /><span>+1 (555) 123-4567</span></li>
               <li className="flex items-center gap-2"><Mail className="h-4 w-4 text-accent" /><span>hello@wanderly.com</span></li>
             </ul>
@@ -59,7 +59,7 @@ export function Footer() {
         </div>
 
         <div className="mt-12 border-t border-white/10 pt-6 text-center text-sm text-primary-foreground/70">
-          © {new Date().getFullYear()} Wanderly. All rights reserved.
+          © {new Date().getFullYear()} Worldwide Travel. All rights reserved.
         </div>
       </div>
     </footer>
