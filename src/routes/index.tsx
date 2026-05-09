@@ -9,7 +9,7 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Wanderly — Explore the World, One Adventure at a Time" },
+      { title: "Worldwide Travel — Explore the World, One Adventure at a Time" },
       { name: "description", content: "Find exclusive deals on tours and travel packages curated by local experts. Flights, hotels, and guided tours." },
     ],
   }),
