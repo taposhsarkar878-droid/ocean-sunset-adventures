@@ -123,36 +123,40 @@ function SearchPage() {
         ) : (
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
             {results.map((t) => (
-              <article
+              <Link
                 key={t.id}
-                className="group overflow-hidden rounded-2xl bg-card shadow-lg ring-1 ring-border transition hover:-translate-y-2 hover:shadow-2xl"
+                to="/tours/$tourId"
+                params={{ tourId: t.id }}
+                className="group block overflow-hidden rounded-2xl bg-card shadow-lg ring-1 ring-border transition hover:-translate-y-2 hover:shadow-2xl"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  <img
-                    src={t.img}
-                    alt={t.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                  <div className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">
-                    Starting from ${t.price}
-                  </div>
-                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                    <div className="mb-1 flex items-center gap-1.5 text-xs text-white/80">
-                      <MapPin className="h-3.5 w-3.5" />
-                      {t.country} · {t.durationDays} days
+                <article>
+                  <div className="relative aspect-[4/5] overflow-hidden">
+                    <img
+                      src={t.img}
+                      alt={t.name}
+                      loading="lazy"
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    <div className="absolute left-4 top-4 rounded-full bg-accent px-3 py-1 text-xs font-bold text-accent-foreground">
+                      Starting from ${t.price}
                     </div>
-                    <h3 className="text-xl font-bold">{t.name}</h3>
-                    <div className="mt-2 flex items-center gap-1">
-                      {Array.from({ length: t.rating }).map((_, i) => (
-                        <Star key={i} className="h-4 w-4 fill-accent text-accent" />
-                      ))}
-                      <span className="ml-1 text-sm font-medium">{t.rating.toFixed(1)}</span>
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <div className="mb-1 flex items-center gap-1.5 text-xs text-white/80">
+                        <MapPin className="h-3.5 w-3.5" />
+                        {t.country} · {t.durationDays} days
+                      </div>
+                      <h3 className="text-xl font-bold">{t.name}</h3>
+                      <div className="mt-2 flex items-center gap-1">
+                        {Array.from({ length: t.rating }).map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                        ))}
+                        <span className="ml-1 text-sm font-medium">{t.rating.toFixed(1)}</span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              </article>
+                </article>
+              </Link>
             ))}
           </div>
         )}
