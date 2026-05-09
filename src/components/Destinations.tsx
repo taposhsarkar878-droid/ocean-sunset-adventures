@@ -1,10 +1,10 @@
 import bali from "@/assets/dest-bali.jpg";
-import santorini from "@/assets/dest-santorini.jpg";
+import rockies from "@/assets/dest-rockies.jpg";
 import swiss from "@/assets/dest-swiss.jpg";
 import { Star, MapPin } from "lucide-react";
 
 const destinations = [
-  { img: santorini, name: "Santorini, Greece", price: 899, country: "Aegean Sea" },
+  { img: rockies, name: "Canadian Rockies", price: 899, country: "Canada" },
   { img: bali, name: "Bali, Indonesia", price: 649, country: "Southeast Asia" },
   { img: swiss, name: "Swiss Alps", price: 1299, country: "Switzerland" },
 ];
