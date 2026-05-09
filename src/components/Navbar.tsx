@@ -31,9 +31,12 @@ export function Navbar() {
         </ul>
 
         <div className="hidden md:block">
-          <button className="rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/30 transition hover:scale-105">
+          <Link
+            to="/auth"
+            className="inline-block rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/30 transition hover:scale-105"
+          >
             Sign Up
-          </button>
+          </Link>
         </div>
 
         <button onClick={() => setOpen(!open)} className="text-white md:hidden">
@@ -52,9 +55,9 @@ export function Navbar() {
               </li>
             ))}
             <li>
-              <button className="w-full rounded-full bg-accent px-6 py-2.5 text-sm font-semibold text-accent-foreground">
+              <Link to="/auth" className="block w-full rounded-full bg-accent px-6 py-2.5 text-center text-sm font-semibold text-accent-foreground">
                 Sign Up
-              </button>
+              </Link>
             </li>
           </ul>
         </div>
